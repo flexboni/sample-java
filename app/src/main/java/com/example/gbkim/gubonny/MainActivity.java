@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> arDate;
     private ArrayAdapter<String> arA;
     private ListView lv;
-    private EditText searchBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
