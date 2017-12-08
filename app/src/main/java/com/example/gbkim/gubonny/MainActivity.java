@@ -27,8 +27,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        menuActs.put("CardView", CardViewActivity.class); // list 메뉴 명 / 클래스명
+        addList();    // list 추가
 
+        setAdapter(); // 화면구성, 어탭터 추가
+
+        itemClick();  // 리스트 선택 이벤트
+    }
+
+    private void addList() {
+        // list 메뉴 명 / 클래스명
+        menuActs.put("CardView", CardViewActivity.class);
+        menuActs.put("JavaCode UI", JavaLayoutActivity.class);
+        menuActs.put("ListView", ListActivity.class);
+        menuActs.put("Event", EventBasicActivity.class);
+
+    }
+
+    private void setAdapter() {
         arDate = new ArrayList<>();
         for (String key : menuActs.keySet()) arDate.add(key);
 
@@ -36,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         lv = findViewById(R.id.lvMainMenu);
         lv.setAdapter(arA);
-        itemClick(); // 리스트 선택 이벤트
     }
 
     private void itemClick() {

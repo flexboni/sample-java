@@ -9,15 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"> <!--Editext 초기실행시 자판 숨기기-->
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"> <!-- Editext 초기실행시 자판 숨기기 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CardViewActivity"></activity>
+        <activity android:name=".CardViewActivity" />
+        <activity android:name=".JavaLayoutActivity" />
+        <activity android:name=".ListActivity" />
+        <activity android:name=".EventBasicActivity"></activity>
     </application>
 
 </manifest>
