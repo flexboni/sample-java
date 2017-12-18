@@ -21,7 +21,8 @@
         <activity android:name=".CardViewActivity" />
         <activity android:name=".JavaLayoutActivity" />
         <activity android:name=".ListActivity" />
-        <activity android:name=".EventBasicActivity"></activity>
+        <activity android:name=".EventBasicActivity" />
+        <activity android:name=".MotionEventActivity"></activity>
     </application>
 
 </manifest>

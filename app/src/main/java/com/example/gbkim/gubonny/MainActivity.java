@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("JavaCode UI", JavaLayoutActivity.class);
         menuActs.put("ListView", ListActivity.class);
         menuActs.put("Event", EventBasicActivity.class);
+        menuActs.put(" - MotionEvent", MotionEventActivity.class);
 
     }
 
