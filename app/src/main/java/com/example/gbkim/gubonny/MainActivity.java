@@ -1,14 +1,11 @@
 package com.example.gbkim.gubonny;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -41,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("ListView", ListActivity.class);
         menuActs.put("Event", EventBasicActivity.class);
         menuActs.put(" - MotionEvent", MotionEventActivity.class);
+        menuActs.put("Receiver", ReceiverActivity.class);
+        menuActs.put(" - NetworkReceiver", NetworkReceiverActivity.class);
+        menuActs.put("Dialog", DialogBasicActivity.class);
+        menuActs.put(" - CustomeDialog", CustomDialogActivity.class);
+
+
 
     }
 
