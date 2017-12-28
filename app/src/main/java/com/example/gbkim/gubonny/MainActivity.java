@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put(" - NetworkReceiver", NetworkReceiverActivity.class);
         menuActs.put("Dialog", DialogBasicActivity.class);
         menuActs.put(" - CustomeDialog", CustomDialogActivity.class);
+        menuActs.put("SaveLogin", SaveLoginActivity.class);
 
 
 

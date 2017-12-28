@@ -1,12 +1,14 @@
 package com.example.gbkim.gubonny;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.gbkim.gubonny.Adapter.RecyclerViewAdapter;
+import com.example.gbkim.gubonny.Listener.RecyclerItemClickListener;
 
 import java.util.ArrayList;
 
@@ -33,28 +35,20 @@ public class CardViewActivity extends AppCompatActivity {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(SubjectName);
         recyclerView.setAdapter(adapter);
 
-        itemTouch(); // 목록 선택 이벤트
-    }
-
-    private void itemTouch() {
-        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
-            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-
-                return false;
+            public void onItemClick(View view, int position) {
+                TextView tv_cardItem = view.findViewById(R.id.tvTitle);
+                tv_cardItem.setText("눌렀쯤");
             }
 
             @Override
-            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+            public void onLongItemClick(View view, int position) {
 
             }
+        }));
 
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-            }
-        });
-    }
+        }
 
     private void addItems() {
         // Adding items to RecyclerView

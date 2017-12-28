@@ -28,7 +28,9 @@
         <activity android:name=".ReceiverActivity" />
         <activity android:name=".NetworkReceiverActivity" />
         <activity android:name=".DialogBasicActivity" />
-        <activity android:name=".CustomDialogActivity"></activity>
+        <activity android:name=".CustomDialogActivity" />
+        <activity android:name=".SaveLoginActivity" />
+        <activity android:name=".SaveLoginNextActivity" />
     </application>
 
 </manifest>
