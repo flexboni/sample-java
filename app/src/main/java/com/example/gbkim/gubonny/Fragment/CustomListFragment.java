@@ -16,7 +16,7 @@ import com.example.gbkim.gubonny.R;
 
 public class CustomListFragment extends ListFragment{
 
-    String countries[] = {"One", "Two", "Three", "Four", "Five", "Six"};
+    String countries[] = {"One", "Two", "Three", "Four", "Five", "Six "};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
