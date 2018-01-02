@@ -31,6 +31,9 @@
         <activity android:name=".CustomDialogActivity" />
         <activity android:name=".SaveLoginActivity" />
         <activity android:name=".SaveLoginNextActivity" />
+        <activity android:name=".LvItemSelectActivity" />
+        <activity android:name=".FragmentActivity" />
+        <activity android:name=".ListFragmentActivity"></activity>
     </application>
 
 </manifest>

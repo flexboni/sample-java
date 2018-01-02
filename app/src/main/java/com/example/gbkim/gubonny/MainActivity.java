@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("CardView", CardViewActivity.class);
         menuActs.put("JavaCode UI", JavaLayoutActivity.class);
         menuActs.put("ListView", ListActivity.class);
+        menuActs.put(" - LvItemSelect", LvItemSelectActivity.class);
         menuActs.put("Event", EventBasicActivity.class);
         menuActs.put(" - MotionEvent", MotionEventActivity.class);
         menuActs.put("Receiver", ReceiverActivity.class);
@@ -43,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("Dialog", DialogBasicActivity.class);
         menuActs.put(" - CustomeDialog", CustomDialogActivity.class);
         menuActs.put("SaveLogin", SaveLoginActivity.class);
+        menuActs.put("Fragment", FragmentActivity.class);
+        menuActs.put(" - CustomListFragment", ListFragmentActivity.class);
+
 
 
 
