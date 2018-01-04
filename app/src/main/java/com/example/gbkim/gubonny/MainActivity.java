@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("SaveLogin", SaveLoginActivity.class);
         menuActs.put("Fragment", FragmentActivity.class);
         menuActs.put(" - CustomListFragment", ListFragmentActivity.class);
+        menuActs.put("ViewPager", ViewPagerActivity.class);
 
 
 

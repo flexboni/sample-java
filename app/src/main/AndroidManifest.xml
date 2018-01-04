@@ -33,7 +33,8 @@
         <activity android:name=".SaveLoginNextActivity" />
         <activity android:name=".LvItemSelectActivity" />
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".ListFragmentActivity"></activity>
+        <activity android:name=".ListFragmentActivity" />
+        <activity android:name=".ViewPagerActivity"></activity>
     </application>
 
 </manifest>

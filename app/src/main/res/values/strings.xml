@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Android RecyclerView Search</string>
     <string name="search_hint">Search</string>
+
+    <string name="default_patient_name">KiTae Kim</string>
+    <string name="default_pat_reg_no">102736</string>
+    <string name="default_pat_gender">Male</string>
+    <string name="default_pat_age">26 years</string>
+    <string name="default_pat_loc">021 / 04 / 01</string>
+    <string name="default_pat_disease">Chest Pain</string>
+    <string name="default_pat_level">Level</string>
+
+    <string name="default_category">Admission</string>
+    <string name="default_brief_info">5/2(HD/POD) Priority A</string>
 </resources>
