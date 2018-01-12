@@ -34,7 +34,8 @@
         <activity android:name=".LvItemSelectActivity" />
         <activity android:name=".FragmentActivity" />
         <activity android:name=".ListFragmentActivity" />
-        <activity android:name=".ViewPagerActivity"></activity>
+        <activity android:name=".ViewPagerActivity" />
+        <activity android:name=".ExpandableActivity"></activity>
     </application>
 
 </manifest>

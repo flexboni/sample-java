@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("Fragment", FragmentActivity.class);
         menuActs.put(" - CustomListFragment", ListFragmentActivity.class);
         menuActs.put("ViewPager", ViewPagerActivity.class);
+        menuActs.put("Expandable", ExpandableActivity.class);
+
+
+
 
 
 
