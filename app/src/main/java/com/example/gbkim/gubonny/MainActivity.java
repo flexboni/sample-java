@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void addList() {
         // list 메뉴 명 / 클래스명
-        menuActs.put("CardView", CardViewActivity.class);
+        menuActs.put("ReclycerView", CardViewActivity.class);
+        menuActs.put(" - CardView", CardViewActivity.class);
+        menuActs.put(" - ChangeBackground", ChangeBgActivity.class);
         menuActs.put("JavaCode UI", JavaLayoutActivity.class);
         menuActs.put("ListView", ListActivity.class);
         menuActs.put(" - LvItemSelect", LvItemSelectActivity.class);
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put(" - CustomListFragment", ListFragmentActivity.class);
         menuActs.put("ViewPager", ViewPagerActivity.class);
         menuActs.put("Expandable", ExpandableActivity.class);
+        menuActs.put("Multiple View Type", MultiplyViewActivity.class);
 
 
 

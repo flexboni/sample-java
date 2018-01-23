@@ -12,4 +12,7 @@
 
     <string name="default_category">Admission</string>
     <string name="default_brief_info">5/2(HD/POD) Priority A</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

@@ -35,7 +35,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.SubjectTv.setText(SubjectNames.get(position));
     }
 
-    // 리스트에 보여줄 항목의 개수
+    // 레이아웃 찾아와 변수 설정함. 'itemview.'으로 찾아오는게 중요
     @Override
     public int getItemCount() {
         return SubjectNames.size();

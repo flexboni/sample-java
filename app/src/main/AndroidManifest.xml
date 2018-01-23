@@ -35,7 +35,9 @@
         <activity android:name=".FragmentActivity" />
         <activity android:name=".ListFragmentActivity" />
         <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".ExpandableActivity"></activity>
+        <activity android:name=".ExpandableActivity" />
+        <activity android:name=".MultiplyViewActivity" />
+        <activity android:name=".ChangeBgActivity"></activity>
     </application>
 
 </manifest>
