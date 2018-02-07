@@ -1,11 +1,14 @@
 package com.example.gbkim.gubonny.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.gbkim.gubonny.MainActivity;
 import com.example.gbkim.gubonny.R;
 
 import java.util.ArrayList;
@@ -14,12 +17,14 @@ import java.util.ArrayList;
  * Created by gbkim on 2017-12-22.
  */
 
-public class Adapter_ViewPager extends PagerAdapter {
+public class Adapter_Clickable_VP extends PagerAdapter {
 
+    private final Context context;
     ArrayList<String[]> getArrResult;
     LayoutInflater inflater;
 
-    public Adapter_ViewPager(LayoutInflater inInflater, ArrayList<String[]> arrayList) {
+    public Adapter_Clickable_VP(Context context, LayoutInflater inInflater, ArrayList<String[]> arrayList) {
+        this.context = context;
         this.getArrResult = arrayList;
         this.inflater = inInflater;
     }
@@ -38,6 +43,17 @@ public class Adapter_ViewPager extends PagerAdapter {
 
         // ViewPager에 만들어 낸 View 추가
         container.addView(view);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (position == 0) {
+                    Intent intent = new Intent(context, MainActivity.class);
+
+                    context.startActivity(intent);
+                }
+            }
+        });
 
         // 정보 세팅된 View를 리턴
         return view;

@@ -15,4 +15,88 @@
     <string name="title_activity_tab">TabActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+
+    <string name="timeline_SystomorDisease">[진단명]</string>
+    <string name="timeline_department">진료과명</string>
+    <string name="timeline_disease">Rt.heart failre, r/o HCAP</string>
+    <string name="timeline_date">2018-01-10</string>
+    <string name="ed_login_hintID">사번을 입력하세요</string>
+    <string name="ed_login_hintPW">비밀번호를 입력하세요</string>
+    <string name="ed_login_save">사번 저장하기</string>
+    <string name="btn_login">로그인</string>
+    <string name="btn_next">다음</string>
+
+    <string name="et_searchPT">환자 번호 / 환자 이름 검색</string>
+    <string name="my_patient_recent">최근 본 환자</string>
+    <string name="my_patient_label">나의 환자</string>
+    <string name="my_patient_hospitalization_cnt">0</string>
+    <string name="my_patient_visitor_cnt">0</string>
+    <string name="my_patient_emergency_cnt">0</string>
+    <string name="my_patient_operation_cnt">0</string>
+    <string name="my_patient_hospitalization_title">• 입원</string>
+    <string name="my_patient_visitor_title">• 외래</string>
+    <string name="my_patient_emergency_title">• 응급</string>
+    <string name="my_patient_operation_title">수술</string>
+    <string name="my_patient_btn_view_all">모두 보기 \u003e</string>
+    <string name="quick_menu_record">• 외래경과</string>
+    <string name="quick_menu_record_dept">작성과:</string>
+    <string name="quick_menu_record_date">작성일:</string>
+    <string name="quick_menu_record_firstWriter">작성자:</string>
+    <string name="quick_menu_record_lastWriter">최종작성자:</string>
+    <string name="quick_menu_record_opinion">소견></string>
+    <string name="quick_menu_record_opinion_contents">\u003c initial problems \u003e \n
+        #2 recent onset Lt sided weakness \n
+        #4 bradycardia,sinus \n
+        \u003c Assessment \u0026 paln \u003e \n
+        A) bronchial asthma \n
+        acute aggravating on chronic obstructive lung \n
+        diseases \n
+        P) PEF \n
+        O2 supply \n
+        repeated ABGA \n
+        pulmonology consult </string>
+    <string name="view_all">모두 보기 \u003e</string>
+    <string name="record">의무기록</string>
+    <string name="default_name">홍길동</string>
+    <string name="default_ptnum">2052736</string>
+    <string name="default_gender">M</string>
+    <string name="default_age">26세</string>
+    <string name="default_department">심장내과</string>
+    <string name="default_location">091/04/01</string>
+    <string name="slash">/</string>
+    <string name="dot">\u2981</string>
+    <string name="all_medical_record">전체의무기록</string>
+    <string name="all_medical_department">전체진료과</string>
+    <string name="former_recored">\u25c2 \t 이전기록</string>
+    <string name="latter_recored">다음기록 \t \u25b8</string>
+    <string name="wave">~</string>
+    <string name="result">검사결과</string>
+    <string name="default_vital_sign_date">2017-06-17 24:00</string>
+    <string name="default_vital_sign_BPS">BP(S)</string>
+    <string name="default_vital_sign_BPS_num">128</string>
+    <string name="default_vital_sign_BPD">BP(D)</string>
+    <string name="default_vital_sign_BPD_num">96</string>
+    <string name="default_vital_sign_pulse">맥박</string>
+    <string name="default_vital_sign_pulse_num">87</string>
+    <string name="default_vital_sign_breath">호흡</string>
+    <string name="default_vital_sign_breath_num">37</string>
+    <string name="default_vital_sign_body_heat">체온</string>
+    <string name="default_vital_sign_body_heat_num">36</string>
+    <string name="io_title">I/O</string>
+    <string name="io_intake">• Intake</string>
+    <string name="io_output">• output</string>
+    <string name="io_inout">• In-Out</string>
+    <string name="order">처방조회</string>
+    <string name="order_date1">2017-03-11</string>
+    <string name="order_emergency">응급</string>
+    <string name="order_prn">PRN</string>
+    <string name="order_dc">DC</string>
+    <string name="order_before_operation">• 수술 전</string>
+    <string name="order_being_operation">• 수술 중</string>
+    <string name="order_after_operation">• 수술 후</string>
+    <string name="order_etc">• 정규 / 그 외</string>
+    <string name="order_contents1">Ibuprofen Suspension [150mg {oral} \n qd q24h for 1 day] \n period : 04/06/2015 ~</string>
+    <string name="order_contents2">Ibuprofen Suspension [150mg {oral} \n qd q24h for 1 day] \n period : 04/06/2015 ~ 05/06/2015]</string>
+    <string name="order_contents3">Chest CT (Contrast) + 3D \n (Chest with other CT)NECK CT (3D, Contrast) \n CT 판독 의뢰 드림</string>
 </resources>

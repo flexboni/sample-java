@@ -10,4 +10,27 @@
     <color name="button_text_selector">#727272</color>
     <drawable name="red_color">#FA032C</drawable>
     <drawable name="blue_color">#061EF2</drawable>
+
+
+    <color name="colorBlue">#29a2fa</color>
+    <color name="colorBlue30">#36b2f9</color>
+    <color name="colorWhite20">#33000000</color>
+    <color name="colorSky">#30c2e8</color>
+    <color name="colorSky30">#3fd7ff</color>
+    <color name="colorHospitalization">#5579da</color>
+    <color name="colorVisitor">#29a2f9</color>
+    <color name="colorEmergency">#30c2e8</color>
+    <color name="colorOperation">#17b3a9</color>
+
+    <color name="colorGray">#666666</color>
+    <color name="colorLightGray">#a0a0a0</color>
+    <color name="colorBrightGray">#c9c9c9</color>
+    <color name="colorTransparency">#00ff0000</color>
+    <color name="colorTimeLineDate">#ceeaff</color>
+    <color name="colorDarckBlack">#292c34</color>
+    <color name="colorLightBlack">#222222</color>
+    <color name="colorRed">#c00000</color>
+    <color name="colorBrightGreen">#0fc317</color>
+    <color name="colorDarkGreen">#336600</color>
+    <color name="colorOrange">#ff7d2e</color>
 </resources>

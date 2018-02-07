@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("ReclycerView", CardViewActivity.class);
         menuActs.put(" - CardView", CardViewActivity.class);
         menuActs.put(" - ChangeBackground", ChangeBgActivity.class);
+        menuActs.put(" - Filter", FilterActivity.class);
         menuActs.put("JavaCode UI", JavaLayoutActivity.class);
         menuActs.put("ListView", ListActivity.class);
         menuActs.put(" - LvItemSelect", LvItemSelectActivity.class);
@@ -49,8 +50,12 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("Fragment", FragmentActivity.class);
         menuActs.put(" - CustomListFragment", ListFragmentActivity.class);
         menuActs.put("ViewPager", ViewPagerActivity.class);
+        menuActs.put(" - Clickable", ClickableVpActivity.class);
         menuActs.put("Expandable", ExpandableActivity.class);
         menuActs.put("Multiple View Type", MultiplyViewActivity.class);
+        menuActs.put("ScrollView", ScrollViewActivity.class);
+        menuActs.put("AutoComplete", AutoCompleteActivity.class);
+
 
 
 
