@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put(" - NetworkReceiver", NetworkReceiverActivity.class);
         menuActs.put("Dialog", DialogBasicActivity.class);
         menuActs.put(" - CustomeDialog", CustomDialogActivity.class);
+        menuActs.put(" - DateCustomDialog", DateCustomDialogActivity.class);
         menuActs.put("SaveLogin", SaveLoginActivity.class);
         menuActs.put("Fragment", FragmentActivity.class);
         menuActs.put(" - CustomListFragment", ListFragmentActivity.class);
@@ -55,12 +56,7 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("Multiple View Type", MultiplyViewActivity.class);
         menuActs.put("ScrollView", ScrollViewActivity.class);
         menuActs.put("AutoComplete", AutoCompleteActivity.class);
-
-
-
-
-
-
+        menuActs.put("Temp", TempActivity.class);
 
 
     }
