@@ -1,19 +1,26 @@
 package com.example.gbkim.gubonny;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.gbkim.gubonny.Adapter.Adapter_DateCustomDialog;
 import com.example.gbkim.gubonny.Adapter.RecyclerViewAdapter;
 import com.example.gbkim.gubonny.Listener.RecyclerItemClickListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class DateCustomDialogActivity extends AppCompatActivity {
 
@@ -21,6 +28,7 @@ public class DateCustomDialogActivity extends AppCompatActivity {
     private LinearLayoutManager RecyclerViewLayoutManager;
     private ArrayList<String> title;
     private Button btn_date;
+    private Button btn_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +36,7 @@ public class DateCustomDialogActivity extends AppCompatActivity {
         setContentView(R.layout.activity_date_custom_dialog);
 
         btn_date = findViewById(R.id.btn_date);
+        btn_time = findViewById(R.id.btn_time);
 
         rv_dcd = findViewById(R.id.rv_dcd);
         RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -41,30 +50,6 @@ public class DateCustomDialogActivity extends AppCompatActivity {
         rv_dcd.setAdapter(adapter);
     }
 
-    private void event() {
-        // RecyclerView 아이템 선택 이벤트
-        rv_dcd.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), rv_dcd, new RecyclerItemClickListener.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                TextView tv_cardItem = view.findViewById(R.id.tvTitle);
-                tv_cardItem.setText("눌렀쯤");
-            }
-
-            @Override
-            public void onLongItemClick(View view, int position) {
-
-            }
-        }));
-
-        // 날짜 다이얼로그
-        btn_date.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                show();
-            }
-        });
-    }
-
     private void addItems() {
         title = new ArrayList<>();
 
@@ -73,26 +58,35 @@ public class DateCustomDialogActivity extends AppCompatActivity {
         title.add("MP");
     }
 
-    private void show() {
-        final Dialog dialog = new Dialog(getApplicationContext());
+    private void event() {
+        final Calendar cal = Calendar.getInstance();
 
-        // custom dialog 넣기
-        dialog.setContentView(R.layout.custom_dialog);
-
-        // 제목 넣기
-        TextView tvTitle = dialog.findViewById(R.id.tv_custom_dia_title);
-        tvTitle.setText("네트워크 연결 오류");
-
-        // 내용 넣기
-        TextView tvContent = dialog.findViewById(R.id.tv_custom_dia_content);
-        tvContent.setText("네트워크가 연결되지 않았습니다.\n네트워크 연결 후에\n이용해 주시기 바랍니다.");
-
-        dialog.show();
-
-        dialog.findViewById(R.id.btn_custom).setOnClickListener(new View.OnClickListener() {
+        btn_date.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                DatePickerDialog dpd = new DatePickerDialog(DateCustomDialogActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int date) {
+                        String msg = String.format("%d-%d-%d", year, month+1, date);
+                        btn_date.setText(msg);
+                    }
+                }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
+                dpd.getDatePicker().setMaxDate(new Date().getTime());    //입력한 날짜 이후로 클릭 안되게 옵션
+                dpd.show();
+            }
+        });
 
+        btn_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TimePickerDialog tpd = new TimePickerDialog(DateCustomDialogActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int hour, int min) {
+                        String msg = String.format("%d:%d", hour, min);
+                        btn_time.setText(msg);
+                    }
+                }, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true);
+                tpd.show();
             }
         });
     }
