@@ -98,6 +98,16 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
                 show(btn_mp);
             }
         });
+
+        btn_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tv_bp.setText(btn_bp.getText());
+                tv_hp.setText(btn_hp.getText());
+                tv_mp.setText(btn_mp.getText());
+
+            }
+        });
     }
 
     private void show(final Button btn) {
@@ -106,8 +116,8 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
         dialog.setTitle("Set BP");
         dialog.setContentView(R.layout.dialog);
 
-        Button b1 = dialog.findViewById(R.id.button1);
-        Button b2 = dialog.findViewById(R.id.button1);
+        Button btn_set = dialog.findViewById(R.id.btn_set);
+        Button btn_cancel = dialog.findViewById(R.id.btn_cancel);
 
         final NumberPicker np = dialog.findViewById(R.id.numberPicker1);
         np.setMaxValue(100);
@@ -115,7 +125,7 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
         np.setWrapSelectorWheel(true);
         np.setOnValueChangedListener(this);
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        btn_set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 btn.setText(String.valueOf(np.getValue()));
@@ -123,7 +133,7 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
             }
         });
 
-        b2.setOnClickListener(new View.OnClickListener() {
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
