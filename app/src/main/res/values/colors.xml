@@ -22,7 +22,9 @@
     <color name="colorEmergency">#30c2e8</color>
     <color name="colorOperation">#17b3a9</color>
 
+    <color name="colorDimgray">#696969</color>
     <color name="colorGray">#666666</color>
+    <color name="colorDarkGray">#a9a9a9</color>
     <color name="colorLightGray">#a0a0a0</color>
     <color name="colorBrightGray">#c9c9c9</color>
     <color name="colorTransparency">#00ff0000</color>
@@ -33,4 +35,8 @@
     <color name="colorBrightGreen">#0fc317</color>
     <color name="colorDarkGreen">#336600</color>
     <color name="colorOrange">#ff7d2e</color>
+    <color name="colorAzure">#f0ffff</color>
+
+
+
 </resources>

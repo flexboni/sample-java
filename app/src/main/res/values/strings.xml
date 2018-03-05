@@ -99,4 +99,5 @@
     <string name="order_contents1">Ibuprofen Suspension [150mg {oral} \n qd q24h for 1 day] \n period : 04/06/2015 ~</string>
     <string name="order_contents2">Ibuprofen Suspension [150mg {oral} \n qd q24h for 1 day] \n period : 04/06/2015 ~ 05/06/2015]</string>
     <string name="order_contents3">Chest CT (Contrast) + 3D \n (Chest with other CT)NECK CT (3D, Contrast) \n CT 판독 의뢰 드림</string>
+    <string name="select_button_scale">select_button_scale</string>
 </resources>
