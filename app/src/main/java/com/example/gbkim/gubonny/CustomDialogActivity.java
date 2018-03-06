@@ -28,7 +28,7 @@ public class CustomDialogActivity extends AppCompatActivity {
 
         final Dialog dialog = new Dialog(CustomDialogActivity.this);
 
-        // custom dialog 넣기
+        // custom number_dialog 넣기
         dialog.setContentView(R.layout.custom_dialog);
 
         // 제목 넣기
@@ -40,8 +40,8 @@ public class CustomDialogActivity extends AppCompatActivity {
         tvContent.setText("네트워크가 연결되지 않았습니다.\n네트워크 연결 후에\n이용해 주시기 바랍니다.");
 
 //        // 백버튼, 외부 터치 시 취소 X
-//        dialog.setCancelable(false);
-//        dialog.setCanceledOnTouchOutside(false);
+//        number_dialog.setCancelable(false);
+//        number_dialog.setCanceledOnTouchOutside(false);
 
         dialog.show();
 

@@ -8,10 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.gbkim.gubonny.VO.VO_Scale;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -26,6 +30,12 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
     private TextView tv_bp;
     private TextView tv_hp;
     private TextView tv_mp;
+    private int btn_position = 0;
+    private int changBtnPosition = 0;
+
+    private VO_Scale vo_scale;
+    private ArrayList<Integer> default_scale;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +53,29 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
         tv_hp = findViewById(R.id.tv_hp);
         tv_mp = findViewById(R.id.tv_mp);
 
+        getDate();
+
+        setDate();
+
         event(); // 각종 이벤트
+    }
+
+    private void getDate() {
+        // DB에서 가져올 값
+        int default_bp = 20;
+        int default_hp = 50;
+        int default_mp = 3;
+
+        default_scale = new ArrayList<>();
+        default_scale.add(default_bp);
+        default_scale.add(default_hp);
+        default_scale.add(default_mp);
+    }
+
+    private void setDate() {
+        btn_bp.setText(default_scale.get(0));
+        btn_hp.setText(default_scale.get(1));
+        btn_mp.setText(default_scale.get(2));
     }
 
     private void event() {
@@ -78,24 +110,31 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
             }
         });
 
+
         btn_bp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                show(btn_bp);
+                btn_position = 0;
+
+                show(btn_bp, btn_position, default_scale.get(btn_position));
             }
         });
 
         btn_hp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                show(btn_hp);
+                btn_position = 1;
+
+                show(btn_hp, btn_position, default_scale.get(btn_position));
             }
         });
 
         btn_mp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                show(btn_mp);
+                btn_position = 2;
+
+                show(btn_mp, btn_position, default_scale.get(btn_position));
             }
         });
 
@@ -110,11 +149,11 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
         });
     }
 
-    private void show(final Button btn) {
+    private void show(final Button btn, final int btn_position, final int scale) {
         final Dialog dialog = new Dialog(DateCustomDialogActivity.this);
 
         dialog.setTitle("Set BP");
-        dialog.setContentView(R.layout.dialog);
+        dialog.setContentView(R.layout.number_dialog);
 
         Button btn_set = dialog.findViewById(R.id.btn_set);
         Button btn_cancel = dialog.findViewById(R.id.btn_cancel);
@@ -122,6 +161,7 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
         final NumberPicker np = dialog.findViewById(R.id.numberPicker1);
         np.setMaxValue(100);
         np.setMinValue(0);
+        np.setValue(scale);
         np.setWrapSelectorWheel(true);
         np.setOnValueChangedListener(this);
 
@@ -140,6 +180,43 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
             }
         });
         dialog.show();
+
+        ImageView iv_left = dialog.findViewById(R.id.iv_left);
+        ImageView iv_right = dialog.findViewById(R.id.iv_right);
+
+        if (btn_position == 0) {
+            iv_left.setVisibility(View.GONE);
+        } else if (btn_position == 2) {
+            iv_right.setVisibility(View.GONE);
+        }
+
+        changBtnPosition = btn_position;
+
+        iv_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changBtnPosition--;
+
+                if (btn_position == 1) {
+                    show(btn_bp, changBtnPosition, default_scale.get(changBtnPosition));
+                } else if (btn_position == 2) {
+                    show(btn_hp, changBtnPosition, default_scale.get(changBtnPosition));
+                }
+            }
+        });
+
+        iv_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changBtnPosition++;
+
+                if (btn_position == 0) {
+                    show(btn_hp, changBtnPosition, default_scale.get(changBtnPosition));
+                } else if (btn_position == 1) {
+                    show(btn_mp, changBtnPosition, default_scale.get(changBtnPosition));
+                }
+            }
+        });
     }
 
     @Override
