@@ -15,6 +15,7 @@ import android.widget.TimePicker;
 
 import com.example.gbkim.gubonny.VO.VO_Scale;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -32,10 +33,8 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
     private TextView tv_mp;
     private int btn_position = 0;
     private int changBtnPosition = 0;
-
-    private VO_Scale vo_scale;
-    private ArrayList<Integer> default_scale;
-
+    private ArrayList<String> default_scale;
+    private ArrayList<String> title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,33 +52,53 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
         tv_hp = findViewById(R.id.tv_hp);
         tv_mp = findViewById(R.id.tv_mp);
 
-        getDate();
+        getDate(); // DB에서 가져올 값
 
-        setDate();
+        setDate(); // 기본 데이터 넣기
 
         event(); // 각종 이벤트
     }
 
+    // DB에서 가져올 값
     private void getDate() {
-        // DB에서 가져올 값
-        int default_bp = 20;
-        int default_hp = 50;
-        int default_mp = 3;
+        String default_bp = "20";
+        String default_hp = "50";
+        String default_mp = "3";
 
         default_scale = new ArrayList<>();
         default_scale.add(default_bp);
         default_scale.add(default_hp);
         default_scale.add(default_mp);
+
     }
 
+    // 기본 데이터 넣기
     private void setDate() {
-        btn_bp.setText(default_scale.get(0));
-        btn_hp.setText(default_scale.get(1));
-        btn_mp.setText(default_scale.get(2));
+        long now = System.currentTimeMillis();
+        Date date = new Date(now);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        String getDate = sdf.format(date);
+
+        sdf = new SimpleDateFormat("HH:mm:ss");
+
+        String getTime = sdf.format(date);
+
+        btn_bp.setText(default_scale.get(0).toString());
+        btn_hp.setText(default_scale.get(1).toString());
+        btn_mp.setText(default_scale.get(2).toString());
+
+        btn_date.setText(getDate);
+        btn_time.setText(getTime);
     }
 
     private void event() {
         final Calendar cal = Calendar.getInstance();
+        title = new ArrayList<>();
+
+        title.add("BP");
+        title.add("HP");
+        title.add("MP");
 
         btn_date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,10 +107,10 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int date) {
                         String msg = String.format("%d-%d-%d", year, month + 1, date);
+
                         btn_date.setText(msg);
                     }
                 }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
-                dpd.getDatePicker().setMaxDate(new Date().getTime());    //입력한 날짜 이후로 클릭 안되게 옵션
                 dpd.show();
             }
         });
@@ -110,13 +129,12 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
             }
         });
 
-
         btn_bp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 btn_position = 0;
 
-                show(btn_bp, btn_position, default_scale.get(btn_position));
+                show(btn_bp, btn_position, btn_bp.getText().toString(), title.get(btn_position).toString());
             }
         });
 
@@ -125,7 +143,7 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
             public void onClick(View view) {
                 btn_position = 1;
 
-                show(btn_hp, btn_position, default_scale.get(btn_position));
+                show(btn_hp, btn_position, btn_hp.getText().toString(), title.get(btn_position).toString());
             }
         });
 
@@ -134,7 +152,7 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
             public void onClick(View view) {
                 btn_position = 2;
 
-                show(btn_mp, btn_position, default_scale.get(btn_position));
+                show(btn_mp, btn_position, btn_mp.getText().toString(), title.get(btn_position).toString());
             }
         });
 
@@ -144,26 +162,34 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
                 tv_bp.setText(btn_bp.getText());
                 tv_hp.setText(btn_hp.getText());
                 tv_mp.setText(btn_mp.getText());
-
             }
         });
     }
 
-    private void show(final Button btn, final int btn_position, final int scale) {
+    // Dialog 보여주기
+    private void show(final Button btn, final int btn_position, String scale, String inTitle) {
         final Dialog dialog = new Dialog(DateCustomDialogActivity.this);
-
-        dialog.setTitle("Set BP");
-        dialog.setContentView(R.layout.number_dialog);
-
         Button btn_set = dialog.findViewById(R.id.btn_set);
         Button btn_cancel = dialog.findViewById(R.id.btn_cancel);
-
+        TextView tv_title = dialog.findViewById(R.id.tv_title);
         final NumberPicker np = dialog.findViewById(R.id.numberPicker1);
+
+        dialog.setContentView(R.layout.number_dialog);
+
+        tv_title.setText(inTitle);
+
         np.setMaxValue(100);
         np.setMinValue(0);
-        np.setValue(scale);
+        np.setValue(Integer.parseInt(scale));
         np.setWrapSelectorWheel(true);
         np.setOnValueChangedListener(this);
+
+        np.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+                btn.setText(String.valueOf(np.getValue()));
+            }
+        });
 
         btn_set.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -198,10 +224,11 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
                 changBtnPosition--;
 
                 if (btn_position == 1) {
-                    show(btn_bp, changBtnPosition, default_scale.get(changBtnPosition));
+                    show(btn_bp, changBtnPosition, btn_bp.getText().toString(), title.get(changBtnPosition));
                 } else if (btn_position == 2) {
-                    show(btn_hp, changBtnPosition, default_scale.get(changBtnPosition));
+                    show(btn_hp, changBtnPosition, btn_hp.getText().toString(), title.get(changBtnPosition));
                 }
+                dialog.dismiss();
             }
         });
 
@@ -211,10 +238,11 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
                 changBtnPosition++;
 
                 if (btn_position == 0) {
-                    show(btn_hp, changBtnPosition, default_scale.get(changBtnPosition));
+                    show(btn_hp, changBtnPosition, btn_hp.getText().toString(), title.get(changBtnPosition));
                 } else if (btn_position == 1) {
-                    show(btn_mp, changBtnPosition, default_scale.get(changBtnPosition));
+                    show(btn_mp, changBtnPosition, btn_mp.getText().toString(), title.get(changBtnPosition));
                 }
+                dialog.dismiss();
             }
         });
     }
