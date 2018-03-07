@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -17,99 +19,62 @@ import java.util.Date;
 
 public class TempActivity extends AppCompatActivity {
 
-    private Button btn1;
-    private Button btn2;
+    private Button btn_bp;
+    private Button btn_hp;
+    private Button btn_mp;
+    private TextView tv_bp;
+    private TextView tv_hp;
+    private TextView tv_mp;
+    private int btn_position;
 
-    final int DIALOG_DATE = 1;
-    final int DIALOG_TIME = 2;
-
-    private String TAG = "PickerActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp);
 
-        btn1 = findViewById(R.id.btn1);
-        btn2 = findViewById(R.id.btn2);
+        btn_bp = findViewById(R.id.btn_bp);
+        btn_hp = findViewById(R.id.btn_hp);
+        btn_mp = findViewById(R.id.btn_mp);
+        tv_bp = findViewById(R.id.tv_bp);
+        tv_hp = findViewById(R.id.tv_hp);
+        tv_mp = findViewById(R.id.tv_mp);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showDialog(DIALOG_DATE);
-            }
-        });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showDialog(DIALOG_TIME);
-            }
-        });
-
-        init();
+        evet();
     }
 
-    private void init() {
-        final Calendar cal = Calendar.getInstance();
-
-        Log.e(TAG, cal.get(Calendar.YEAR)+"");
-        Log.e(TAG, cal.get(Calendar.MONTH)+1+"");
-        Log.e(TAG, cal.get(Calendar.DATE)+"");
-        Log.e(TAG, cal.get(Calendar.HOUR_OF_DAY)+"");
-        Log.e(TAG, cal.get(Calendar.MINUTE)+"");
-
-        //DATE PICKER DIALOG
-      btn1.setOnClickListener(new View.OnClickListener() {
+    private void evet() {
+        btn_bp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                btn_position = 0;
 
-                DatePickerDialog dialog = new DatePickerDialog(TempActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int date) {
+                numPicker(btn_bp, btn_position, "20", "BP");
+            }
+        });
+    }
 
-                        String msg = String.format("%d 년 %d 월 %d 일", year, month+1, date);
-                        Toast.makeText(TempActivity.this, msg, Toast.LENGTH_SHORT).show();
-                    }
-                }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE));
+    private void numPicker(final Button btn, int btn_position, String scale, String title) {
+        Dialog dialog = new Dialog(TempActivity.this);
 
-                dialog.getDatePicker().setMaxDate(new Date().getTime());    //입력한 날짜 이후로 클릭 안되게 옵션
-                dialog.show();
+        dialog.setTitle("Title");
+        dialog.setContentView(R.layout.number_dialog);
 
+        final NumberPicker numberPicker = dialog.findViewById(R.id.numberPicker1);
+        Button btn_set = dialog.findViewById(R.id.btn_set);
+        Button btn_cancel = dialog.findViewById(R.id.btn_cancel);
+
+        numberPicker.setMinValue(0);
+        numberPicker.setMaxValue(100);
+        numberPicker.setValue(Integer.parseInt(scale));
+        numberPicker.setWrapSelectorWheel(true);
+        numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                btn.setText(String.valueOf(numberPicker.getValue()));
             }
         });
 
-      btn2.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-
-          }
-      });
-
-
-
-    }
-
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        switch (id) {
-            case DIALOG_DATE :
-                DatePickerDialog dpd = new DatePickerDialog(TempActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        Toast.makeText(getApplicationContext(), year+"년 "+(month+1)+"월 "+dayOfMonth+"일 을 선택했습니다", Toast.LENGTH_SHORT).show();
-                    }
-                }, 2000, 1, 1);
-                return dpd;
-            case DIALOG_TIME:
-                TimePickerDialog tpd = new TimePickerDialog(TempActivity.this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        Toast.makeText(getApplicationContext(), hourOfDay + "시 " + minute + "분 을 선택했습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                }, 4, 19, true);
-                return tpd;
-        }
-        return super.onCreateDialog(id);
+        dialog.show();
     }
 }

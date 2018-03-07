@@ -134,7 +134,7 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
             public void onClick(View view) {
                 btn_position = 0;
 
-                show(btn_bp, btn_position, btn_bp.getText().toString(), title.get(btn_position).toString());
+                show(btn_bp, btn_position, "20", "BP");
             }
         });
 
@@ -169,32 +169,33 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
     // Dialog 보여주기
     private void show(final Button btn, final int btn_position, String scale, String inTitle) {
         final Dialog dialog = new Dialog(DateCustomDialogActivity.this);
+
+        dialog.setTitle("title");
+        dialog.setContentView(R.layout.number_dialog);
+
+        final NumberPicker numberPicker = dialog.findViewById(R.id.numberPicker1);
         Button btn_set = dialog.findViewById(R.id.btn_set);
         Button btn_cancel = dialog.findViewById(R.id.btn_cancel);
         TextView tv_title = dialog.findViewById(R.id.tv_title);
-        final NumberPicker np = dialog.findViewById(R.id.numberPicker1);
-
-        dialog.setContentView(R.layout.number_dialog);
 
         tv_title.setText(inTitle);
 
-        np.setMaxValue(100);
-        np.setMinValue(0);
-        np.setValue(Integer.parseInt(scale));
-        np.setWrapSelectorWheel(true);
-        np.setOnValueChangedListener(this);
+        numberPicker.setMinValue(0);
+        numberPicker.setMaxValue(100);
+        numberPicker.setValue(Integer.parseInt(scale));
+        numberPicker.setWrapSelectorWheel(true);
 
-        np.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+        numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                btn.setText(String.valueOf(np.getValue()));
+                btn.setText(String.valueOf(numberPicker.getValue()));
             }
         });
 
         btn_set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn.setText(String.valueOf(np.getValue()));
+                btn.setText(String.valueOf(numberPicker.getValue()));
                 dialog.dismiss();
             }
         });
