@@ -1,9 +1,10 @@
-package com.example.gbkim.gubonny;
+package com.example.gbkim.gubonny.NotificationService;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.gbkim.gubonny.R;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 public class FCMActivity extends AppCompatActivity {
