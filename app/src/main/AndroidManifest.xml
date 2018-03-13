@@ -3,6 +3,12 @@
     package="com.example.gbkim.gubonny">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 디바이스가 활성화 되지 않았을 때(켜져 있지 않았을 때) 화면을 활성화 시켜주는 옵 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- <service -->
+    <!-- android:name=".NotificationService" -->
+    <!-- android:enabled="true" /> -->
+    <!-- <receiver android:name=".NotificationReceiver" /> -->
 
     <application
         android:allowBackup="true"
@@ -43,7 +49,9 @@
         <activity android:name=".AutoCompleteActivity" />
         <activity android:name=".ClickableVpActivity" />
         <activity android:name=".DateCustomDialogActivity" />
-        <activity android:name=".TempActivity"></activity>
+        <activity android:name=".TempActivity" />
+        <activity android:name=".NoServerNotifActivity" />
+        <activity android:name=".FCMActivity"></activity>
     </application>
 
 </manifest>

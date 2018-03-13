@@ -57,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("ScrollView", ScrollViewActivity.class);
         menuActs.put("AutoComplete", AutoCompleteActivity.class);
         menuActs.put("Temp", TempActivity.class);
+        menuActs.put("Notification", null);
+        menuActs.put(" - No_Server_Notification", NoServerNotifActivity.class);
+        menuActs.put(" - FCMNotification", FCMActivity.class);
+
 
 
     }
