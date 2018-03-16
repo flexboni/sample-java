@@ -50,7 +50,7 @@
         <activity android:name=".ClickableVpActivity" />
         <activity android:name=".DateCustomDialogActivity" />
         <activity android:name=".TempActivity" />
-        <activity android:name=".NoServerNotifActivity" />
+        <activity android:name=".NotificationService.NoServerNotifActivity" />
         <activity android:name=".NotificationService.FCMActivity"></activity>
 
         <service

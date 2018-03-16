@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.gbkim.gubonny.NotificationService.FCMActivity;
+import com.example.gbkim.gubonny.NotificationService.NoServerNotifActivity;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
