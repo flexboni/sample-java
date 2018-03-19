@@ -5,11 +5,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- 디바이스가 활성화 되지 않았을 때(켜져 있지 않았을 때) 화면을 활성화 시켜주는 옵 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <!-- <service -->
     <!-- android:name=".NotificationService" -->
     <!-- android:enabled="true" /> -->
     <!-- <receiver android:name=".NotificationReceiver" /> -->
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -50,22 +50,20 @@
         <activity android:name=".ClickableVpActivity" />
         <activity android:name=".DateCustomDialogActivity" />
         <activity android:name=".TempActivity" />
-        <activity android:name=".NotificationService.NoServerNotifActivity" />
-        <activity android:name=".NotificationService.FCMActivity"></activity>
+        <activity android:name=".NotificationService.FCMActivity" />
 
-        <service
-            android:name=".NotificationService.FirebaseMessagingService">
+        <service android:name=".NotificationService.FirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".NotificationService.FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
-        <service
-            android:name=".NotificationService.FirebaseInstanceIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-        </service>
+        <activity android:name=".NotificationService.NoServerNotifiActivity"></activity>
     </application>
 
 </manifest>
