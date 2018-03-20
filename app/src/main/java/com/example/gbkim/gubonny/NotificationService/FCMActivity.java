@@ -15,13 +15,7 @@ public class FCMActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fcm);
 
-        //추가한 라인
-        FirebaseMessaging.getInstance().subscribeToTopic("news");
-        FirebaseInstanceId.getInstance().getToken();
-
-//        String token = FirebaseInstanceId.getInstance().getToken();
-//        Log.d("FCM_Token", token);
-
-
+        String token = FirebaseInstanceId.getInstance().getToken(); // 토근정보 가져오기
+        Log.d("FCM_Token", token);
     }
 }
