@@ -13,8 +13,6 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import com.example.gbkim.gubonny.VO.VO_Scale;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -176,7 +174,7 @@ public class DateCustomDialogActivity extends AppCompatActivity implements Numbe
         final NumberPicker numberPicker = dialog.findViewById(R.id.numberPicker1);
         Button btn_set = dialog.findViewById(R.id.btn_set);
         Button btn_cancel = dialog.findViewById(R.id.btn_cancel);
-        TextView tv_title = dialog.findViewById(R.id.tv_title);
+        TextView tv_title = dialog.findViewById(R.id.tv_clicked);
 
         tv_title.setText(inTitle);
 

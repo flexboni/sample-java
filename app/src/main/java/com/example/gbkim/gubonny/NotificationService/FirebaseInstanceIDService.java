@@ -33,7 +33,6 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private void sendRegistrationToServer(String token) {
         // Add custom implementation, as needed.
-
         OkHttpClient client = new OkHttpClient();
         RequestBody body = new FormBody.Builder()
                 .add("Token", token)
@@ -41,7 +40,7 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
 
         //request
         Request request = new Request.Builder()
-                .url("http://127.0.0.1/fcm/register.php")
+                .url("http://localhost/fcm/register.php")
                 .post(body)
                 .build();
 
