@@ -63,7 +63,10 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".NotificationService.NoServerNotifiActivity"></activity>
+        <activity android:name=".NotificationService.NoServerNotifiActivity" />
+        <activity android:name=".ServiceBind.ServiceBindActivity"></activity>
+
+        <service android:name=".ServiceBind.MyService"></service>
     </application>
 
 </manifest>
