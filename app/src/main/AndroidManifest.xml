@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- 디바이스가 활성화 되지 않았을 때(켜져 있지 않았을 때) 화면을 활성화 시켜주는 옵 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 카메라 제어 위한 권한 -->
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
 
     <!-- <service -->
     <!-- android:name=".NotificationService" -->
@@ -52,21 +54,24 @@
         <activity android:name=".TempActivity" />
         <activity android:name=".NotificationService.FCMActivity" />
 
-        <service android:name=".NotificationService.FirebaseMessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-        <service android:name=".NotificationService.FirebaseInstanceIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-            </intent-filter>
-        </service>
+        <!-- <service android:name=".NotificationService.FirebaseMessagingService"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.google.firebase.MESSAGING_EVENT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
+        <!-- <service android:name=".NotificationService.FirebaseInstanceIDService"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
 
         <activity android:name=".NotificationService.NoServerNotifiActivity" />
-        <activity android:name=".ServiceBind.ServiceBindActivity"></activity>
+        <activity android:name=".ServiceBind.ServiceBindActivity" />
 
-        <service android:name=".ServiceBind.MyService"></service>
+        <service android:name=".ServiceBind.MyService" />
+
+        <activity android:name=".GridView.ActivityGridView" />
+        <activity android:name=".TakePicture.ActivityTakePicture"></activity>
     </application>
 
 </manifest>

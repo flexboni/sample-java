@@ -8,9 +8,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.gbkim.gubonny.GridView.ActivityGridView;
 import com.example.gbkim.gubonny.NotificationService.FCMActivity;
 import com.example.gbkim.gubonny.NotificationService.NoServerNotifiActivity;
 import com.example.gbkim.gubonny.ServiceBind.ServiceBindActivity;
+import com.example.gbkim.gubonny.TakePicture.ActivityTakePicture;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put(" - No_Server_Notification", NoServerNotifiActivity.class);
         menuActs.put(" - FCMNotification", FCMActivity.class);
         menuActs.put("ServiceBind", ServiceBindActivity.class);
+        menuActs.put("GridView", ActivityGridView.class);
+        menuActs.put("TakePicture", ActivityTakePicture.class);
 
 
 

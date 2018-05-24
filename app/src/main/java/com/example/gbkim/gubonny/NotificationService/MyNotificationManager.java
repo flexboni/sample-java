@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.os.PowerManager;
 import android.support.v4.app.NotificationCompat;
 
-import com.example.gbkim.myapplication.R;
+import com.example.gbkim.gubonny.R;
 
 
 /**
@@ -49,7 +49,7 @@ public class MyNotificationManager {
                 .setSound(defaultSoundUri).setLights(000000255, 500, 200)
                 .setPriority(NotificationCompat.PRIORITY_MAX)                                       // 화면에 Push 알림 띄우기
                 .setContentTitle(title)                                                             // 알림 제목
-                .setContentText(ctx.getResources().getString(R.string.bigTextContent));             // 내용이 많을 경우 보여줄 문자
+                .setContentText("123");             // 내용이 많을 경우 보여줄 문자
 
         NotificationCompat.BigTextStyle style = new NotificationCompat.BigTextStyle(mNotification);
         style.bigText(body).setBigContentTitle(title);                                              // 긴 메시지 제목, 내용 설정

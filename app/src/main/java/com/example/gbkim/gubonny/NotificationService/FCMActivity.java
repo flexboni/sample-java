@@ -9,8 +9,6 @@ import android.util.Log;
 
 import com.example.gbkim.gubonny.Common.HistoryBack;
 import com.example.gbkim.gubonny.R;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 
