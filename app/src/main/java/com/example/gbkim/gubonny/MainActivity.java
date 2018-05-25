@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.example.gbkim.gubonny.GridView.ActivityGridView;
 import com.example.gbkim.gubonny.NotificationService.FCMActivity;
 import com.example.gbkim.gubonny.NotificationService.NoServerNotifiActivity;
+import com.example.gbkim.gubonny.Picker.NumberPickerActivity;
 import com.example.gbkim.gubonny.ServiceBind.ServiceBindActivity;
 import com.example.gbkim.gubonny.TakePicture.ActivityTakePicture;
 
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("ServiceBind", ServiceBindActivity.class);
         menuActs.put("GridView", ActivityGridView.class);
         menuActs.put("TakePicture", ActivityTakePicture.class);
-
+        menuActs.put("Picker", NumberPickerActivity.class);
 
 
     }

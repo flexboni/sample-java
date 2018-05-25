@@ -6,7 +6,9 @@
     <!-- 디바이스가 활성화 되지 않았을 때(켜져 있지 않았을 때) 화면을 활성화 시켜주는 옵 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!-- 카메라 제어 위한 권한 -->
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <!-- <service -->
     <!-- android:name=".NotificationService" -->
@@ -53,6 +55,7 @@
         <activity android:name=".DateCustomDialogActivity" />
         <activity android:name=".TempActivity" />
         <activity android:name=".NotificationService.FCMActivity" />
+        <activity android:name=".Picker.NumberPickerActivity" />
 
         <!-- <service android:name=".NotificationService.FirebaseMessagingService"> -->
         <!-- <intent-filter> -->
@@ -71,7 +74,8 @@
         <service android:name=".ServiceBind.MyService" />
 
         <activity android:name=".GridView.ActivityGridView" />
-        <activity android:name=".TakePicture.ActivityTakePicture"></activity>
+        <activity android:name=".TakePicture.ActivityTakePicture" />
+        <activity android:name=".Picker.ActivityCustomPicker"></activity>
     </application>
 
 </manifest>

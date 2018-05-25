@@ -32,7 +32,6 @@ public class ActivityTakePicture extends AppCompatActivity {
         btn_take_picture = findViewById(R.id.btn_take_picture);
         iv_take_picture_photo = findViewById(R.id.iv_take_picture_photo);
 
-
         btn_take_picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

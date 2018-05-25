@@ -52,6 +52,14 @@ public class TempActivity extends AppCompatActivity {
                 numPicker(btn_bp, btn_position, "20", "BP");
             }
         });
+
+        tv_mp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_mp.setBackgroundColor(R.drawable.select_textview_ch_bg);
+
+            }
+        });
     }
 
     private void numPicker(final Button btn, int btn_position, String scale, String title) {
