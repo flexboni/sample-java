@@ -43,6 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView SubjectTv;
+
         public ViewHolder(View itemview) {
             super(itemview);
 

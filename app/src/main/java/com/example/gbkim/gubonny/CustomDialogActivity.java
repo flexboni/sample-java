@@ -1,6 +1,8 @@
 package com.example.gbkim.gubonny;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -27,6 +29,9 @@ public class CustomDialogActivity extends AppCompatActivity {
     private void show() {
 
         final Dialog dialog = new Dialog(CustomDialogActivity.this);
+
+        // 배경색 투명하게 하고 레이아웃에 코너준 것 반영 됨.
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         // custom number_dialog 넣기
         dialog.setContentView(R.layout.custom_dialog);

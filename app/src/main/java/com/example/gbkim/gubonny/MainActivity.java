@@ -71,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("GridView", ActivityGridView.class);
         menuActs.put("TakePicture", ActivityTakePicture.class);
         menuActs.put("Picker", NumberPickerActivity.class);
-
-
     }
 
     private void setAdapter() {
