@@ -6,6 +6,28 @@
     android:layout_height="match_parent"
     tools:context="com.example.gbkim.gubonny.MainActivity">
 
+    <!-- Header -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_main_header_area"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 메뉴 이미지 -->
+        <ImageView
+            android:id="@+id/iv_main_header_menu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:background="@color/colorTransparency"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_menu_normal_bk" />
+    </android.support.constraint.ConstraintLayout>
+
     <TextView
         android:id="@+id/arr_TextView"
         android:layout_width="wrap_content"
@@ -18,7 +40,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/cl_main_header_area" />
 
 
     <EditText

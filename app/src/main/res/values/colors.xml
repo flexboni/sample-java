@@ -37,6 +37,19 @@
     <color name="colorOrange">#ff7d2e</color>
     <color name="colorAzure">#f0ffff</color>
 
+    <!-- 메뉴 영역 color -->
+    <color name="colorMenuBackColor">#ffffff</color>
+    <color name="colorMenuBackColorButtonNormal">#ffffff</color>
+    <color name="colorMenuBackColorButtonPressed">#f5f5f5</color>
+    <color name="colorMenuUserAreaBackColor">#1fb6d6</color>
+    <color name="colorMenuUserAreaTextUserName">#ffffff</color>
+    <color name="colorMenuUserAreaTextUserDept">#ffffff</color>
+    <color name="colorMenuContentsAreaButtonText">#000000</color>
+    <color name="colorMenuContentsAreaButtonTextDisabled">#33000000</color>
+    <color name="colorMenuBottomAreaSplitter">#e0e0e0</color>
+    <color name="colorMenuBottomAreaBackColor">#ffffff</color>
+    <color name="colorMenuBottomAreaButtonText">#000000</color>
+
 
 
 </resources>

@@ -76,7 +76,8 @@
         <activity android:name=".GridView.ActivityGridView" />
         <activity android:name=".TakePicture.ActivityTakePicture" />
         <activity android:name=".Picker.ActivityCustomPicker" />
-        <activity android:name=".Popup.ActivityPopupColum"></activity>
+        <activity android:name=".Popup.ActivityPopupColum" />
+        <activity android:name=".SplashImage.SplashActivity"></activity>
     </application>
 
 </manifest>

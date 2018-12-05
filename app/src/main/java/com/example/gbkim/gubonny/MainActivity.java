@@ -13,6 +13,7 @@ import com.example.gbkim.gubonny.NotificationService.FCMActivity;
 import com.example.gbkim.gubonny.NotificationService.NoServerNotifiActivity;
 import com.example.gbkim.gubonny.Picker.NumberPickerActivity;
 import com.example.gbkim.gubonny.ServiceBind.ServiceBindActivity;
+import com.example.gbkim.gubonny.SplashImage.SplashActivity;
 import com.example.gbkim.gubonny.TakePicture.ActivityTakePicture;
 
 import java.util.ArrayList;
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("GridView", ActivityGridView.class);
         menuActs.put("TakePicture", ActivityTakePicture.class);
         menuActs.put("Picker", NumberPickerActivity.class);
+        menuActs.put("Splash Image", SplashActivity.class);
     }
 
     private void setAdapter() {
