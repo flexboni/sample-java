@@ -50,6 +50,9 @@
     <color name="colorMenuBottomAreaBackColor">#ffffff</color>
     <color name="colorMenuBottomAreaButtonText">#000000</color>
 
+    <color name="text_lgray">#808080</color>
+    <color name="text_gray">#323232</color>
+
 
 
 </resources>

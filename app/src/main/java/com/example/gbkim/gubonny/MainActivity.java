@@ -15,6 +15,8 @@ import com.example.gbkim.gubonny.Picker.NumberPickerActivity;
 import com.example.gbkim.gubonny.ServiceBind.ServiceBindActivity;
 import com.example.gbkim.gubonny.SplashImage.SplashActivity;
 import com.example.gbkim.gubonny.TakePicture.ActivityTakePicture;
+import com.example.gbkim.gubonny.TreeView.TreeView2Activity;
+import com.example.gbkim.gubonny.TreeView.TreeViewActivity;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -73,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("TakePicture", ActivityTakePicture.class);
         menuActs.put("Picker", NumberPickerActivity.class);
         menuActs.put("Splash Image", SplashActivity.class);
+        menuActs.put("Tree View", null);
+        menuActs.put(" - Tree View1", TreeViewActivity.class);
+        menuActs.put(" - Tree View2", TreeView2Activity.class);
     }
 
     private void setAdapter() {

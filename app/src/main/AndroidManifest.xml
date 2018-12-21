@@ -77,7 +77,10 @@
         <activity android:name=".TakePicture.ActivityTakePicture" />
         <activity android:name=".Picker.ActivityCustomPicker" />
         <activity android:name=".Popup.ActivityPopupColum" />
-        <activity android:name=".SplashImage.SplashActivity"></activity>
+        <activity android:name=".SplashImage.SplashActivity" />
+        <activity android:name=".TreeView.TreeViewActivity" />
+        <activity android:name=".TreeView.TreeView2Activity" />
+        <activity android:name=".TreeView.SingleFragmentActivity"></activity>
     </application>
 
 </manifest>
