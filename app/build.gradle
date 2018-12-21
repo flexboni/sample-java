@@ -54,4 +54,4 @@ dependencies {
     implementation 'com.github.johnkil.print:print:1.2.+'
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'

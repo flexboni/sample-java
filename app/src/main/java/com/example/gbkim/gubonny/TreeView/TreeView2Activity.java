@@ -41,10 +41,13 @@ public class TreeView2Activity extends AppCompatActivity {
         final ListView listview = findViewById(R.id.listview);
         final SimpleArrayAdapter adapter = new SimpleArrayAdapter(this, list);
         listview.setAdapter(adapter);
+
         listview.setOnItemClickListener((parent, view, position, id) -> {
             Class<?> clazz = listItems.values().toArray(new Class<?>[]{})[position];
+
             Intent i = new Intent(TreeView2Activity.this, SingleFragmentActivity.class);
             i.putExtra(SingleFragmentActivity.FRAGMENT_PARAM, clazz);
+
             TreeView2Activity.this.startActivity(i);
         });
     }

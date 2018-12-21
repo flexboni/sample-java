@@ -15,7 +15,7 @@ buildscript {
         // in the individual module build.gradle files
 
         // for FCM (firebase notification example)
-        classpath 'com.google.gms:google-services:3.2.0'
+//        classpath 'com.google.gms:google-services:3.2.0'
     }
 }
 

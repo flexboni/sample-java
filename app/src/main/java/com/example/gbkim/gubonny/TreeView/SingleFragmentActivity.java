@@ -17,6 +17,7 @@ public class SingleFragmentActivity extends AppCompatActivity {
 
         Bundle b = getIntent().getExtras();
         Class<?> fragmentClass = (Class<?>) b.get(FRAGMENT_PARAM);
+
         if (savedInstanceState == null) {
             Fragment f = Fragment.instantiate(this, fragmentClass.getName());
             f.setArguments(b);
