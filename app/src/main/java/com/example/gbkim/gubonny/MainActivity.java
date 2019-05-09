@@ -8,6 +8,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.gbkim.gubonny.AsyncTask.ActivityAsyncTask;
+import com.example.gbkim.gubonny.Calendar.CalendarViewActivity;
+import com.example.gbkim.gubonny.DateTime.DateTimeActivity;
 import com.example.gbkim.gubonny.GridView.ActivityGridView;
 import com.example.gbkim.gubonny.NotificationService.FCMActivity;
 import com.example.gbkim.gubonny.NotificationService.NoServerNotifiActivity;
@@ -78,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
         menuActs.put("Tree View", null);
         menuActs.put(" - Tree View1", TreeViewActivity.class);
         menuActs.put(" - Tree View2", TreeView2Activity.class);
+        menuActs.put("AsyncTask", ActivityAsyncTask.class);
+        menuActs.put("DateTime", DateTimeActivity.class);
+        menuActs.put("Calendar", CalendarViewActivity.class);
     }
 
     private void setAdapter() {

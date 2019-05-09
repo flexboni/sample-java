@@ -7,5 +7,18 @@
     <dimen name="fontSize_21_sp">21sp</dimen>
     <dimen name="fontSize_15_dip">15dp</dimen>
     <dimen name="fontSize_21_dip">21dp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_13sp">13sp</dimen>
+    <dimen name="text_size_15sp">15sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_21sp">21sp</dimen>
+
+
+    <!-- 팝업 -->
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    <dimen name="popup_text_title">17sp</dimen>
+    <dimen name="popup_list_listview_row_height">60sp</dimen>
+    <dimen name="font_size_button_do">21sp</dimen>
+    <!-->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 
 </resources>

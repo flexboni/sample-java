@@ -52,6 +52,29 @@
 
     <color name="text_lgray">#808080</color>
     <color name="text_gray">#323232</color>
+    <color name="common_text_white_color">#ffffff</color>
+
+    <!-- popup -->
+    <color name="colorPopupTextTitle">#000000</color>
+
+    <!-- 시작일/종료일 -->
+    <color name="calendarDialogDateIndicatorBackColor">#1daf73</color>
+    <color name="dialogCalendarRoundButtonGreenStrokeWhiteBackTextColor">#009587</color>
+    <color name="dialogCalendarRoundButtonDisableBackColor">#d7d7d7</color>
+    <color name="dialogCalendarRoundButtonPressedBackColor">#cc1daf73</color>
+    <color name="dialogCalendarRoundButtonDefaultBackColor">#1daf73</color>
+    <color name="dialogCalendarDateIndicateGreenStrokeWhiteBackTextColorDisable">#ffffff</color>
+    <color name="dialogCalendarDateIndicateGreenStrokeWhiteBackTextColorPressed">#cc009587</color>
+    <color name="dialogCalendarDateIndicateGreenStrokeWhiteBackTextColorDefault">#009587</color>
+    <color name="dialogCalendarBottomButtonDisableBackColor">#d7d7d7</color>
+    <color name="dialogCalendarBottomButtonPressedBackColor">#cc1daf73</color>
+    <color name="dialogCalendarBottomButtonDefaultBackColor">#1daf73</color>
+    <color name="calendarDialogCalendarHeaderBackColor">#ffffff</color>
+    <color name="calendarDialogCalendarHeaderTextColor">#000000</color>
+    <color name="calendarDialogCalendarHeaderTodayDateColor">#1fb6d6</color>
+    <color name="calendarDialogCalendarHeaderPeriodSelectionColor">#1daf73</color>
+    <color name="calendarDialogCalendarHeaderPeriodSelectionTextColor">#ffffff</color>
+    <color name="colorPopupListButtonTextColor">#ffffffff</color>
 
 
 

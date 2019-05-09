@@ -1,7 +1,8 @@
 package com.example.gbkim.gubonny.TreeView.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,10 +24,10 @@ public class CustomViewHolderFragment extends Fragment {
     private AndroidTreeView tView;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_default, null, false);
+
         final ViewGroup containerView = rootView.findViewById(R.id.container);
-        rootView.findViewById(R.id.status_bar).setVisibility(View.GONE);
 
         final TreeNode root = TreeNode.root();
 
