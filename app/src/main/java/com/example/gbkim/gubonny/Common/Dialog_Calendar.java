@@ -2,10 +2,11 @@ package com.example.gbkim.gubonny.Common;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,7 +25,6 @@ import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class Dialog_Calendar extends Dialog {
     private Context m_Context;
@@ -33,7 +33,7 @@ public class Dialog_Calendar extends Dialog {
     ImageView imageTopCloseButton;
 
     @BindView(R.id.tv_dialog_date_time_picker_today_button)
-    TextView imageTodayButton;
+    TextView textTodayButton;
     @BindView(R.id.tv_dialog_date_time_picker_title)
     TextView textTopTitle;
     @BindView(R.id.tv_dialog_date_time_picker_date_start_date)
@@ -69,7 +69,7 @@ public class Dialog_Calendar extends Dialog {
     }
 
     public Dialog_Calendar(@NonNull Context context, String title) {
-        super(context);
+        super(context, android.R.style.Theme_Translucent_NoTitleBar);
 
         this.m_Context = context;
         this.sTitle = title;
@@ -78,7 +78,8 @@ public class Dialog_Calendar extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog_date);
+        // 다이얼로그 레이아웃 설정
+        setContentView(R.layout.dialog_calendar);
 
         ButterKnife.bind(this);
 
@@ -88,11 +89,7 @@ public class Dialog_Calendar extends Dialog {
     }
 
     private void init() {
-        // 다이얼로그 외부 화면 흐리게 표현
-        WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
-        lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        lpWindow.dimAmount = 0.8f;
-        getWindow().setAttributes(lpWindow);
+        textTopTitle.setText(sTitle);
 
         try {
             setCurrentTime();
@@ -121,6 +118,7 @@ public class Dialog_Calendar extends Dialog {
     }
 
     private void UIEvents() {
+        // 캘린더 날짜 선택 이벤트
         calendarView.setOnDayClickListener(eventDay -> {
             Calendar a = eventDay.getCalendar();
 
@@ -130,6 +128,18 @@ public class Dialog_Calendar extends Dialog {
             // 시작 일
             if (bFirstSelect) {
                 textStartDate.setText(selectDate);
+                viewStartDateIndicator.setBackgroundColor(
+                        Utils.getResourceColor(
+                                m_Context,
+                                R.color.calendarDialogCalendarHeaderPeriodIndicatorSelectColor
+                        )
+                );
+                viewEndDateIndicator.setBackgroundColor(
+                        Utils.getResourceColor(
+                                m_Context,
+                                R.color.calendarDialogCalendarHeaderPeriodIndicatorDefaultColor
+                        )
+                );
 
                 bFirstSelect = false;
 
@@ -146,44 +156,46 @@ public class Dialog_Calendar extends Dialog {
                     textEndDate.setText(sPrevious);
                 }
 
+                viewEndDateIndicator.setBackgroundColor(
+                        Utils.getResourceColor(
+                                m_Context,
+                                R.color.calendarDialogCalendarHeaderPeriodIndicatorSelectColor
+                        )
+                );
+
                 bFirstSelect = true;
             }
+
+            setBottomButtonEnabled();
         });
-    }
 
-    // 상단 닫기 버튼 클릭, 하단 버튼 클릭
-    @OnClick({R.id.iv_dialog_date_time_picker_close, R.id.btn_dialog_date_time_picker_ok})
-    void onClickButton(View view) {
-        switch (view.getId()) {
-            // 하단 버튼 클릭
-            case R.id.btn_dialog_date_time_picker_ok:
-                if (m_OnClickListener != null) {
-                    String sPrevious = textStartDate.getText().toString();
-                    String sForward = textEndDate.getText().toString();
+        imageTopCloseButton.setOnClickListener(view -> dismiss());
 
-                    if (sPrevious.equals(sForward)) {
-                        m_OnClickListener.OnOkClickListener(sForward);
+        buttonBottomOk.setOnClickListener(view -> {
+            dismiss();
 
-                    } else {
-                        m_OnClickListener.OnOkClickListener(sPrevious, sForward);
-                    }
+            if (m_OnClickListener != null) {
+                String sPrevious = textStartDate.getText().toString();
+                String sForward = textEndDate.getText().toString();
+
+                if (sPrevious.equals(sForward)) {
+                    m_OnClickListener.OnOkClickListener(sForward);
+
+                } else {
+                    m_OnClickListener.OnOkClickListener(sPrevious, sForward);
                 }
+            }
+        });
 
-                break;
-        }
+        // 오늘 날짜 버튼 클릭
+        textTodayButton.setOnClickListener(view -> {
+            try {
+                setCurrentTime();
 
-        dismiss();
-    }
-
-    // 오늘 버튼 클릭
-    @OnClick(R.id.tv_dialog_date_time_picker_today_button)
-    void clickTodayButton() {
-        try {
-            setCurrentTime();
-
-        } catch (OutOfDateRangeException e) {
-            e.printStackTrace();
-        }
+            } catch (OutOfDateRangeException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private void setCurrentTime() throws OutOfDateRangeException {
@@ -199,5 +211,35 @@ public class Dialog_Calendar extends Dialog {
 
         List<Calendar> calendars = new ArrayList<>();
         calendarView.setSelectedDates(calendars);
+
+        viewStartDateIndicator.setBackgroundColor(
+                Utils.getResourceColor(
+                        m_Context,
+                        R.color.calendarDialogCalendarHeaderPeriodIndicatorSelectColor
+                )
+        );
+        viewEndDateIndicator.setBackgroundColor(
+                Utils.getResourceColor(
+                        m_Context,
+                        R.color.calendarDialogCalendarHeaderPeriodIndicatorSelectColor
+                )
+        );
+
+        setBottomButtonEnabled();
+    }
+
+    private void setBottomButtonEnabled() {
+        Drawable background = viewEndDateIndicator.getBackground();
+
+        if (background instanceof ColorDrawable) {
+            int color = ((ColorDrawable) background).getColor();
+
+            if (color == Utils.getResourceColor(m_Context, R.color.calendarDialogCalendarHeaderPeriodIndicatorSelectColor)) {
+                buttonBottomOk.setEnabled(true);
+
+            } else {
+                buttonBottomOk.setEnabled(false);
+            }
+        }
     }
 }

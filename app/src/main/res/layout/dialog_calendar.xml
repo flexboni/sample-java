@@ -164,7 +164,8 @@
         app:selectionColor="@color/calendarDialogCalendarHeaderPeriodSelectionColor"
         app:selectionLabelColor="@color/calendarDialogCalendarHeaderPeriodSelectionTextColor"
         app:todayLabelColor="@color/calendarDialogCalendarHeaderTodayDateColor"
-        app:type="range_picker" />
+        app:type="range_picker"/>
+
 
     <!-- 하단 버튼 -->
     <Button

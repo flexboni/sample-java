@@ -58,6 +58,13 @@ dependencies {
     // Applandeo/Material-Calendar-View
     // 참고 : https://github.com/Applandeo/Material-Calendar-View
     implementation 'com.applandeo:material-calendar-view:1.5.1'
+
+    // prolificinteractive/material-calendarview
+    implementation 'com.github.prolificinteractive:material-calendarview:1.6.1'
+
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.1.1'
+
+
 }
 
 //apply plugin: 'com.google.gms.google-services'

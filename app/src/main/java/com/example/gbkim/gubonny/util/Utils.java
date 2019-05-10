@@ -1,5 +1,11 @@
 package com.example.gbkim.gubonny.util;
 
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+
 import java.security.MessageDigest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -51,6 +57,24 @@ public class Utils {
         return new String(hexChars);
     }
 
+    public static String getResourceString(Context c, int nResourceId) {
+        return (c.getResources().getString(nResourceId));
+    }
+
+    public static int getColor(String sColor) {
+        return (Color.parseColor(sColor));
+    }
+
+    public static int getResourceColor(Context c, int nResourceId) {
+        String sColor = getResourceString(c, nResourceId);
+        return (getColor(sColor));
+    }
+
+    public static Drawable getDrawable(Context c, int nResourceId) {
+        return (c.getResources().getDrawable(nResourceId));
+    }
+
+
     // 날짜 비고
     // 참고 : https://rockdrumy.tistory.com/1327
     public static boolean DateCompare(String sPrevious, String sForward) {
@@ -81,5 +105,10 @@ public class Utils {
         }
 
         return false;
+    }
+
+    // "yyy-MM-dd" 형식으로 변경
+    public static String convertDateFormatyyyy_MM_dd(CalendarDay date){
+        return String.format(Locale.KOREA, "%1$tY-%1$tm-%1$td", date.getDate());
     }
 }

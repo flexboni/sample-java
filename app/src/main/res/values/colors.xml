@@ -69,12 +69,15 @@
     <color name="dialogCalendarBottomButtonDisableBackColor">#d7d7d7</color>
     <color name="dialogCalendarBottomButtonPressedBackColor">#cc1daf73</color>
     <color name="dialogCalendarBottomButtonDefaultBackColor">#1daf73</color>
+    <color name="colorPopupListButtonTextColor">#ffffffff</color>
+    <!-- 캘린더 -->
     <color name="calendarDialogCalendarHeaderBackColor">#ffffff</color>
     <color name="calendarDialogCalendarHeaderTextColor">#000000</color>
     <color name="calendarDialogCalendarHeaderTodayDateColor">#1fb6d6</color>
     <color name="calendarDialogCalendarHeaderPeriodSelectionColor">#1daf73</color>
     <color name="calendarDialogCalendarHeaderPeriodSelectionTextColor">#ffffff</color>
-    <color name="colorPopupListButtonTextColor">#ffffffff</color>
+    <color name="calendarDialogCalendarHeaderPeriodIndicatorSelectColor">#1daf73</color>
+    <color name="calendarDialogCalendarHeaderPeriodIndicatorDefaultColor">#ffffff</color>
 
 
 
