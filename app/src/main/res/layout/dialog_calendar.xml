@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cl_dialog_date_time_picker_body"
     android:layout_width="match_parent"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="@+id/iv_dialog_date_time_picker_close" />
 
     <!-- 선택한 날짜 표시 영역 -->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_dialog_date_time_picker_date_indicate_area"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_dialog_date_time_picker_close">
 
         <!-- 시작 일 영역 -->
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout4"
             style="@style/DialogDatePickerCenterDateIndicateEntireArea"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -72,7 +72,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_dialog_date_time_picker_date_start_date"
                 app:layout_constraintVertical_bias="0.5" />
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- ~ -->
         <TextView
@@ -87,7 +87,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <!-- 종료 일 영역 -->
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout6"
             style="@style/DialogDatePickerCenterDateIndicateEntireArea"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -120,10 +120,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_dialog_date_time_picker_date_end_date"
                 app:layout_constraintVertical_bias="0.5" />
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- 오늘 날짜 선택 버튼 -->
     <TextView
@@ -180,4 +180,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

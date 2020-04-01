@@ -1,6 +1,6 @@
 package com.example.gbkim.gubonny.Common;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by gbkim on 2018-04-03.

@@ -1,15 +1,6 @@
 package com.example.gbkim.gubonny.NotificationService;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.support.v4.app.NotificationCompat;
-
-import com.example.gbkim.gubonny.R;
+import androidx.core.app.NotificationCompat;
 
 
 //public class FirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService {

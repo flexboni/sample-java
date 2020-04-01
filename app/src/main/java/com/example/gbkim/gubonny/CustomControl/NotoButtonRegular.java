@@ -2,7 +2,7 @@ package com.example.gbkim.gubonny.CustomControl;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.v7.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatButton;
 import android.util.AttributeSet;
 
 public class NotoButtonRegular extends AppCompatButton {

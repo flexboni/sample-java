@@ -1,7 +1,7 @@
 package com.example.gbkim.gubonny;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,7 +11,7 @@ import android.widget.ListView;
 import com.example.gbkim.gubonny.AsyncTask.ActivityAsyncTask;
 import com.example.gbkim.gubonny.Calendar.CalendarViewActivity;
 import com.example.gbkim.gubonny.DateTime.DateTimeActivity;
-import com.example.gbkim.gubonny.GridView.ActivityGridView;
+import com.example.gbkim.gubonny.gridview.ActivityGridView;
 import com.example.gbkim.gubonny.NotificationService.FCMActivity;
 import com.example.gbkim.gubonny.NotificationService.NoServerNotifiActivity;
 import com.example.gbkim.gubonny.Picker.NumberPickerActivity;
@@ -20,10 +20,15 @@ import com.example.gbkim.gubonny.SplashImage.SplashActivity;
 import com.example.gbkim.gubonny.TakePicture.ActivityTakePicture;
 import com.example.gbkim.gubonny.TreeView.TreeView2Activity;
 import com.example.gbkim.gubonny.TreeView.TreeViewActivity;
+import com.example.gbkim.gubonny.autocomplete.AutoCompleteActivity;
+import com.example.gbkim.gubonny.cardview.CardViewActivity;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import com.example.gbkim.gubonny.changebg.ChangeBgActivity;
+import com.example.gbkim.gubonny.viewpager.ClickableVpActivity;
 
 public class MainActivity extends AppCompatActivity {
 

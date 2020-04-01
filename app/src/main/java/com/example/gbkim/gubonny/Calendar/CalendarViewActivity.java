@@ -1,8 +1,7 @@
 package com.example.gbkim.gubonny.Calendar;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.gbkim.gubonny.Common.Dialog_Calendar;
 import com.example.gbkim.gubonny.Common.Dialog_Calendar2;

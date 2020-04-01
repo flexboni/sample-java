@@ -2,14 +2,11 @@ package com.example.gbkim.gubonny.TreeView;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.gbkim.gubonny.MainActivity;
 import com.example.gbkim.gubonny.R;
 import com.example.gbkim.gubonny.TreeView.fragment.CustomViewHolderFragment;
 import com.example.gbkim.gubonny.TreeView.fragment.FolderStructureFragment;
@@ -18,8 +15,6 @@ import com.example.gbkim.gubonny.TreeView.fragment.TwoDScrollingArrowExpandFragm
 import com.example.gbkim.gubonny.TreeView.fragment.TwoDScrollingFragment;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 

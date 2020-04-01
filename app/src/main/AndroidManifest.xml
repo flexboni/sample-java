@@ -36,7 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CardViewActivity" />
+        <activity android:name=".cardview.CardViewActivity" />
         <activity android:name=".JavaLayoutActivity" />
         <activity android:name=".ListActivity" />
         <activity android:name=".EventBasicActivity" />
@@ -53,11 +53,11 @@
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".ExpandableActivity" />
         <activity android:name=".MultiplyViewActivity" />
-        <activity android:name=".ChangeBgActivity" />
+        <activity android:name="com.example.gbkim.gubonny.changebg.ChangeBgActivity" />
         <activity android:name=".ScrollViewActivity" />
         <activity android:name=".FilterActivity" />
-        <activity android:name=".AutoCompleteActivity" />
-        <activity android:name=".ClickableVpActivity" />
+        <activity android:name=".autocomplete.AutoCompleteActivity" />
+        <activity android:name=".viewpager.ClickableVpActivity" />
         <activity android:name=".DateCustomDialogActivity" />
         <activity android:name=".TempActivity" />
         <activity android:name=".NotificationService.FCMActivity" />
@@ -76,7 +76,7 @@
 
         <service android:name=".ServiceBind.MyService" />
 
-        <activity android:name=".GridView.ActivityGridView" />
+        <activity android:name=".gridview.ActivityGridView" />
         <activity android:name=".TakePicture.ActivityTakePicture" />
         <activity android:name=".Picker.ActivityCustomPicker" />
         <activity android:name=".Popup.ActivityPopupColum" />

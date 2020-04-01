@@ -1,5 +1,5 @@
 <!-- MENU Start -->
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +10,7 @@
     android:orientation="vertical">
 
     <!-- 로그인 사용자 정보 영역 -->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_main_menu_user_area"
         android:layout_width="match_parent"
         android:layout_height="113sp"
@@ -47,7 +47,7 @@
             app:layout_constraintStart_toStartOf="@+id/lb_menu_user_name"
             app:layout_constraintTop_toBottomOf="@+id/lb_menu_user_name" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- 메뉴 리스트 -->
     <ListView
@@ -155,4 +155,4 @@
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

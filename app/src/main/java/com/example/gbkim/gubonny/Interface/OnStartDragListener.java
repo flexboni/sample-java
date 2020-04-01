@@ -1,6 +1,6 @@
 package com.example.gbkim.gubonny.Interface;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by gbkim on 2018-01-08.
