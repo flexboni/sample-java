@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gbkim.gubonny.CustomDialogActivity">
+    tools:context="boni.sample.java.CustomDialogActivity">
 
     <Button
         android:id="@+id/btn_custom_dia_main"

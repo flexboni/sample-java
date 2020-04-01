@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gbkim.gubonny.ListFragmentActivity">
+    tools:context="boni.sample.java.ListFragmentActivity">
 
     <fragment
         android:id="@+id/listfragment"
-        android:name="com.example.gbkim.gubonny.fragment.CustomListFragment"
+        android:name="boni.sample.java.fragment.CustomListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_listview" />

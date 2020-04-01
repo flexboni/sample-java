@@ -1,4 +1,4 @@
-package com.example.gbkim.gubonny;
+package boni.sample.java;
 
 import org.junit.Test;
 
