@@ -6,7 +6,7 @@ buildscript {
         classpath gradlePlugin.kotlin
         classpath gradlePlugin.play_services
         classpath gradlePlugin.crashlytics
-        classpath gradlePlugin.fabric
+//        classpath gradlePlugin.fabric
         classpath gradlePlugin.navigation_safe_args
     }
 }

@@ -15,7 +15,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import boni.sample.java.Picker.NumberPickerActivity;
+import boni.sample.java.picker.NumberPickerActivity;
 import boni.sample.java.R;
 
 /**

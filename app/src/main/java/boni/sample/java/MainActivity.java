@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -15,24 +18,24 @@ import java.util.Map;
 import boni.sample.java.AsyncTask.ActivityAsyncTask;
 import boni.sample.java.Calendar.CalendarViewActivity;
 import boni.sample.java.DateTime.DateTimeActivity;
-import boni.sample.java.NotificationService.FCMActivity;
-import boni.sample.java.NotificationService.NoServerNotifiActivity;
-import boni.sample.java.Picker.NumberPickerActivity;
-import boni.sample.java.ServiceBind.ServiceBindActivity;
-import boni.sample.java.SplashImage.SplashActivity;
-import boni.sample.java.TakePicture.ActivityTakePicture;
+import boni.sample.java.dialog.DateCustomDialogActivity;
+import boni.sample.java.list.ExpandableActivity;
+import boni.sample.java.service.FCMActivity;
+import boni.sample.java.service.NoServerNotifiActivity;
+import boni.sample.java.picker.NumberPickerActivity;
+import boni.sample.java.service.ServiceBindActivity;
+import boni.sample.java.splash.SplashActivity;
+import boni.sample.java.camera.ActivityTakePicture;
 import boni.sample.java.TreeView.TreeView2Activity;
 import boni.sample.java.TreeView.TreeViewActivity;
 import boni.sample.java.autocomplete.AutoCompleteActivity;
 import boni.sample.java.cardview.CardViewActivity;
 import boni.sample.java.changebg.ChangeBgActivity;
-import boni.sample.java.datecustomdialog.DateCustomDialogActivity;
 import boni.sample.java.dialog.CustomDialogActivity;
 import boni.sample.java.dialog.DialogBasicActivity;
 import boni.sample.java.dialog.TempActivity;
 import boni.sample.java.event.EventBasicActivity;
 import boni.sample.java.event.MotionEventActivity;
-import boni.sample.java.expandable.ExpandableActivity;
 import boni.sample.java.filter.FilterActivity;
 import boni.sample.java.fragment.FragmentActivity;
 import boni.sample.java.gridview.ActivityGridView;
@@ -47,6 +50,7 @@ import boni.sample.java.receiver.NetworkReceiverActivity;
 import boni.sample.java.receiver.ReceiverActivity;
 import boni.sample.java.viewpager.ClickableVpActivity;
 import boni.sample.java.viewpager.ViewPagerActivity;
+import boni.sample.kotlin.library.paging.PagingActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,11 +58,14 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> arDate;
     private ArrayAdapter<String> arA;
     private ListView lv;
+    private ImageView menuImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        enrollController();
 
         addList();    // list 추가
 
@@ -67,8 +74,14 @@ public class MainActivity extends AppCompatActivity {
         itemClick();  // 리스트 선택 이벤트
     }
 
+    private void enrollController() {
+        menuImage = findViewById(R.id.menuImage);
+    }
+
     private void addList() {
         // list 메뉴 명 / 클래스명
+        menuActs.put("Library", null);
+        menuActs.put(" - Paging", PagingActivity.class);
         menuActs.put("ReclycerView", CardViewActivity.class);
         menuActs.put(" - CardView", CardViewActivity.class);
         menuActs.put(" - ChangeBackground", ChangeBgActivity.class);
@@ -126,6 +139,13 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this, menuActs.get(((ListView) findViewById(R.id.lvMainMenu)).getItemAtPosition(position)));
                 startActivity(intent);
+            }
+        });
+
+        menuImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseCrashlytics.getInstance().log("1234");
             }
         });
     }

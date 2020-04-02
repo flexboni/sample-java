@@ -2,6 +2,7 @@ ext.deps = [:]
 
 // version
 def versions = [:]
+versions.multidex = '1.0.3'
 versions.activity = '1.1.0'
 versions.android_gradle_plugin = '3.6.1'
 versions.annotations = "1.0.0"
@@ -80,8 +81,11 @@ androidx.lifecycle = [
         runtime_ktx  : "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle",
         extensions   : "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle",
         viewmodel_ktx: "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle",
-        livedata_ktx : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+        livedata_ktx : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle",
+        java8        : "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle",
+        compiler     : "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
 ]
+
 androidx.navigation = [
         fragment_ktx: "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
         ui_ktx      : "androidx.navigation:navigation-ui-ktx:$versions.navigation"
@@ -189,13 +193,18 @@ deps.room = [
         testing : "androidx.room:room-testing:$versions.room"
 ]
 
+// 출처: https://duzi077.tistory.com/198 [개발하는 두더지]
+deps.android = [
+        multidex: "com.android.support:multidex:$versions.multidex"
+]
+
 // build gradle plugin
 def gradlePlugin = [
-        android      : "com.android.tools.build:gradle:3.6.1",
-        kotlin       : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
-        play_services: "com.google.gms:google-services:4.3.3",
-        crashlytics  : 'com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta03',
-        fabric       : 'io.fabric.tools:gradle:1.31.2',
+        android             : "com.android.tools.build:gradle:3.6.1",
+        kotlin              : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+        play_services       : "com.google.gms:google-services:4.3.3",
+        crashlytics         : 'com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta03',
+//        fabric              : 'io.fabric.tools:gradle:1.31.2',
         navigation_safe_args: "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
 ]
 ext.gradlePlugin = gradlePlugin

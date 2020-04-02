@@ -5,7 +5,7 @@
     android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="boni.sample.java.NotificationService.FCMActivity">
+    tools:context="boni.sample.java.service.FCMActivity">
 
     <View
         android:id="@+id/statusBarBackground"

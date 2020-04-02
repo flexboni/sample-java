@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="boni.sample.java.NotificationService.NoServerNotifActivity">
+    tools:context="boni.sample.java.service.NoServerNotifActivity">
 
     <TextView
         android:id="@+id/tv_clicked"

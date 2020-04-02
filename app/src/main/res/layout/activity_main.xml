@@ -15,11 +15,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/menuImage"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:adjustViewBounds="false"
+            android:padding="15dp"
             android:src="@drawable/ic_menu_normal_bk"
-            android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

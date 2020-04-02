@@ -24,7 +24,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Calendar.CalendarViewActivity"></activity>
+        <activity android:name="boni.sample.kotlin.library.paging.PagingActivity"></activity>
+        <activity android:name=".library.PagingActivity"></activity>
+        <activity android:name=".Calendar.CalendarViewActivity" />
         <activity android:name=".DateTime.DateTimeActivity" />
         <activity android:name=".AsyncTask.ActivityAsyncTask" />
         <activity
@@ -37,31 +39,31 @@
             </intent-filter>
         </activity>
         <activity android:name=".cardview.CardViewActivity" />
-        <activity android:name=".JavaLayoutActivity" />
-        <activity android:name=".ListActivity" />
-        <activity android:name=".EventBasicActivity" />
-        <activity android:name=".MotionEventActivity" />
-        <activity android:name=".ReceiverActivity" />
-        <activity android:name=".NetworkReceiverActivity" />
-        <activity android:name=".DialogBasicActivity" />
-        <activity android:name=".CustomDialogActivity" />
-        <activity android:name=".SaveLoginActivity" />
-        <activity android:name=".SaveLoginNextActivity" />
-        <activity android:name=".LvItemSelectActivity" />
-        <activity android:name=".FragmentActivity" />
-        <activity android:name=".ListFragmentActivity" />
-        <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".ExpandableActivity" />
-        <activity android:name=".MultiplyViewActivity" />
-        <activity android:name="boni.sample.java.changebg.ChangeBgActivity" />
-        <activity android:name=".ScrollViewActivity" />
-        <activity android:name=".FilterActivity" />
+        <activity android:name=".layout.JavaLayoutActivity" />
+        <activity android:name=".list.ListActivity" />
+        <activity android:name=".event.EventBasicActivity" />
+        <activity android:name=".event.MotionEventActivity" />
+        <activity android:name=".receiver.ReceiverActivity" />
+        <activity android:name=".receiver.NetworkReceiverActivity" />
+        <activity android:name=".dialog.DialogBasicActivity" />
+        <activity android:name=".dialog.CustomDialogActivity" />
+        <activity android:name=".login.SaveLoginActivity" />
+        <activity android:name=".login.SaveLoginNextActivity" />
+        <activity android:name=".list.LvItemSelectActivity" />
+        <activity android:name=".fragment.FragmentActivity" />
+        <activity android:name=".list.ListFragmentActivity" />
+        <activity android:name=".viewpager.ViewPagerActivity" />
+        <activity android:name=".list.ExpandableActivity" />
+        <activity android:name=".list.MultiplyViewActivity" />
+        <activity android:name=".changebg.ChangeBgActivity" />
+        <activity android:name=".layout.ScrollViewActivity" />
+        <activity android:name=".filter.FilterActivity" />
         <activity android:name=".autocomplete.AutoCompleteActivity" />
         <activity android:name=".viewpager.ClickableVpActivity" />
-        <activity android:name=".DateCustomDialogActivity" />
-        <activity android:name=".TempActivity" />
-        <activity android:name=".NotificationService.FCMActivity" />
-        <activity android:name=".Picker.NumberPickerActivity" /> <!-- <service android:name=".NotificationService.FirebaseMessagingService"> -->
+        <activity android:name=".dialog.DateCustomDialogActivity" />
+        <activity android:name=".dialog.TempActivity" />
+        <activity android:name=".service.FCMActivity" />
+        <activity android:name=".picker.NumberPickerActivity" /> <!-- <service android:name=".NotificationService.FirebaseMessagingService"> -->
         <!-- <intent-filter> -->
         <!-- <action android:name="com.google.firebase.MESSAGING_EVENT" /> -->
         <!-- </intent-filter> -->
@@ -71,20 +73,19 @@
         <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT" /> -->
         <!-- </intent-filter> -->
         <!-- </service> -->
-        <activity android:name=".NotificationService.NoServerNotifiActivity" />
-        <activity android:name=".ServiceBind.ServiceBindActivity" />
+        <activity android:name=".service.NoServerNotifiActivity" />
+        <activity android:name=".service.ServiceBindActivity" />
 
-        <service android:name=".ServiceBind.MyService" />
+        <service android:name=".service.MyService" />
 
         <activity android:name=".gridview.ActivityGridView" />
-        <activity android:name=".TakePicture.ActivityTakePicture" />
-        <activity android:name=".Picker.ActivityCustomPicker" />
-        <activity android:name=".Popup.ActivityPopupColum" />
-        <activity android:name=".SplashImage.SplashActivity" />
+        <activity android:name=".camera.ActivityTakePicture" />
+        <activity android:name=".picker.ActivityCustomPicker" />
+        <activity android:name=".dialog.ActivityPopupColum" />
+        <activity android:name=".splash.SplashActivity" />
         <activity android:name=".TreeView.TreeViewActivity" />
         <activity android:name=".TreeView.TreeView2Activity" />
         <activity android:name=".TreeView.SingleFragmentActivity" />
-        <activity android:name=".NFC.NFCActivity" />
     </application>
 
 </manifest>
